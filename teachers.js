@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS7Cvw_7Vug4CBX_5Bp5hP2HPk8gF7uz0-UN5B8Goix7oaq45XeDjzzHR9xrQByrz6L6FI-cqUfVyN2/pub?output=csv"; 
+  const sheetUrl = "teachers.csv"; 
   const tableBody = document.getElementById("teacher-table-body");
 
   fetch(sheetUrl)
