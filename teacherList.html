@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher List - RateMyMustang</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Table Styles */
+    .teacher-table-container {
+      padding: 3rem 2rem;
+      background: #fff;
+    }
+
+    .teacher-table-container h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #b30000;
+    }
+
+    .teacher-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .teacher-table thead {
+      background: #b30000;
+      color: white;
+    }
+
+    .teacher-table th,
+    .teacher-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* .teacher-table tr:hover {
+      background: #c54343;
+    } */
+
+    .teacher-table th {
+      font-size: 1.1rem;
+    }
+
+    .teacher-table td a {
+      color: #b30000;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .teacher-table td a:hover {
+      text-decoration: underline;
+    }
+
+    .teacher-table .actions button {
+      background: #b30000;
+      color: white;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .teacher-table .actions button:hover {
+      background: #8b0000;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="https://www.sfusd.edu/sites/default/files/school-logos/ALHS%20Logo_0.png" alt="Lincoln High Logo">
+      RateMyMustang
+    </div>
+    <nav>
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="teacherList.html"><i class="fa-solid fa-chalkboard-user"></i> Teacher List</a>
+      <a href="#"><i class="fa-solid fa-star"></i> Top Rated</a>
+      <a href="#"><i class="fa-solid fa-user"></i> Login</a>
+    </nav>
+  </header>
+
+  <!-- Teacher Table -->
+  <section class="teacher-table-container">
+    <h2>All Teachers at Abraham Lincoln High School</h2>
+    <table class="teacher-table">
+      <thead>
+  <tr>
+    <th>Name</th>
+    <th>Subject</th>
+    <th>Email</th>
+    <th>Status</th>
+  </tr>
+</thead>
+
+      <tbody id="teacher-table-body">
+        <tr>
+          <td colspan="5" style="text-align:center;">Loading teacher list...</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div><i class="fa-solid fa-school"></i> Abraham Lincoln High School</div>
+    <div>Quick Links | Resources | About RateMyMustang</div>
+  </footer>
+
+  <!-- Teacher Script -->
+  <script src="teachers.js"></script>
+</body>
+</html>
 
