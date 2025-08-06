@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RateMyMustang - Abraham Lincoln High School</title>
+   <link rel="icon" type="image/jpg" href="cropped.jpg">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+  <div class="logo">
+    <img src="https://www.sfusd.edu/sites/default/files/school-logos/ALHS%20Logo_0.png" alt="Lincoln High Logo">
+    RateMyMustang
+  </div>
+  <nav>
+      <a href="teacherList.html"><i class="fa-solid fa-chalkboard-user"></i> Teacher List</a>
+    <a href="index.html"><i class="fa-solid fa-user"></i> Login</a>
+  </nav>
+</header>
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>
+      Find Your Perfect Teacher at 
+      <span class="highlight">Abraham Lincoln High School</span>
+    </h1>
+    <p>Real reviews from real students. Help your fellow Mustangs make informed decisions about their classes.</p>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search by teacher name, subject, or department..." />
+      <button onclick="searchTeacher()"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+    </div>
+    <div class="stats">
+      <div><i class="fa-solid fa-chalkboard-user"></i><br/><strong>250+</strong><br/>Teachers Rated</div>
+      <div><i class="fa-solid fa-comments"></i><br/><strong>1,200+</strong><br/>Student Reviews</div>
+      <div><i class="fa-solid fa-building-columns"></i><br/><strong>30+</strong><br/>Departments</div>
+    </div>
+  </section>
+
+  <!-- Top Rated Teachers -->
+  <section class="top-rated">
+    <h2>Top Rated Teachers</h2>
+    <p>Discover the highest-rated teachers at Abraham Lincoln High School based on real student reviews.</p>
+    <div class="teacher-grid">
+      
+      <!-- Teacher Card -->
+      <div class="teacher-card">
+        <h3>Mr. Kenneth Jones</h3>
+        <p class="subject">AP Biology · Science</p>
+        <p class="rating"><i class="fa-solid fa-star text-gold"></i> 4.7 <span>(89 reviews)</span></p>
+        <p><i class="fa-solid fa-thumbs-up"></i> <strong>92%</strong> Would take again</p>
+        <p><i class="fa-solid fa-gauge-high"></i> Difficulty: 3.8</p>
+        <blockquote>"Amazing teacher! Makes complex concepts easy to understand."</blockquote>
+        <div class="buttons">
+          <button><i class="fa-solid fa-eye"></i> View Reviews</button>
+          <button><i class="fa-solid fa-pen"></i> Rate Teacher</button>
+        </div>
+      </div>
+
+      <div class="teacher-card">
+        <h3>Mr. Charlie Paulson</h3>
+        <p class="subject">Calculus BC · Mathematics</p>
+        <p class="rating"><i class="fa-solid fa-star text-gold"></i> 4.2 <span>(67 reviews)</span></p>
+        <p><i class="fa-solid fa-thumbs-up"></i> <strong>85%</strong> Would take again</p>
+        <p><i class="fa-solid fa-gauge-high"></i> Difficulty: 4.1</p>
+        <blockquote>"Challenging but fair. Really prepares you for the AP exam."</blockquote>
+        <div class="buttons">
+          <button><i class="fa-solid fa-eye"></i> View Reviews</button>
+          <button><i class="fa-solid fa-pen"></i> Rate Teacher</button>
+        </div>
+      </div>
+
+      <!-- testing -->
+       <div id="review-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modal-teacher-name"></h2>
+    <div id="reviews-list">
+      <p>Loading reviews...</p>
+    </div>
+  </div>
+</div>
+
+      <div class="teacher-card">
+        <h3>Mrs. Sara Falls</h3>
+        <p class="subject">AP Literature · English</p>
+        <p class="rating"><i class="fa-solid fa-star text-gold"></i> 4.5 <span>(72 reviews)</span></p>
+        <p><i class="fa-solid fa-thumbs-up"></i> <strong>88%</strong> Would take again</p>
+        <p><i class="fa-solid fa-gauge-high"></i> Difficulty: 3.5</p>
+        <blockquote>"Passionate about literature and it shows. Great discussions."</blockquote>
+        <div class="buttons">
+          <button><i class="fa-solid fa-eye"></i> View Reviews</button>
+          <button><i class="fa-solid fa-pen"></i> Rate Teacher</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Review Modal -->
+  <div id="review-modal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modal-teacher-name"></h2>
+    <div id="reviews-list">
+      <p>Loading reviews...</p>
+    </div>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div><i class="fa-solid fa-school"></i> Abraham Lincoln High School</div>
+    <div>Quick Links | Resources | About RateMyMustang</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
