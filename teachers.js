@@ -1,18 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const sheetUrl = "teachers.csv";  // CSV file in repo root
+  // teachers.csv must be in the same folder as teacherList.html
+  const sheetUrl = "teachers.csv";  
   const tableBody = document.getElementById("teacher-table-body");
 
-  fetch(sheetUrl)
-    .then(response => response.text())
-    .then(data => {
-      const rows = data.trim().split(/\r?\n/);
+  Papa.parse(sheetUrl, {
+    download: true,
+    header: true,
+    skipEmptyLines: true,
+    complete: function(results) {
       tableBody.innerHTML = "";
 
-      rows.slice(1).forEach(row => {
-        if (!row.trim()) return;
-        const cols = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
-        if (!cols || cols.length < 4) return;
-        const [name, subject, email, status] = cols.map(c => c.replace(/(^"|"$)/g, "").trim());
+      results.data.forEach(row => {
+        // Adjust these keys to match EXACT headers in teachers.csv
+        const { "Teacher Name": name, Subject: subject, Email: email, Status: status } = row;
+
+        if (!name || !subject || !email || !status) return;
 
         const tr = document.createElement("tr");
         tr.innerHTML = `
@@ -27,9 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!tableBody.hasChildNodes()) {
         tableBody.innerHTML = "<tr><td colspan='4'>No teachers found.</td></tr>";
       }
-    })
-    .catch(error => {
+    },
+    error: function(error) {
       console.error("Error loading teacher list:", error);
       tableBody.innerHTML = "<tr><td colspan='4'>Error loading teacher list.</td></tr>";
-    });
+    }
+  });
 });
