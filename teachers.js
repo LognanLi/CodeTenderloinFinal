@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const sheetUrl = "teachers.csv"; 
+  const sheetUrl = "teachers.csv";  // CSV file in repo root
   const tableBody = document.getElementById("teacher-table-body");
 
   fetch(sheetUrl)
@@ -10,11 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       rows.slice(1).forEach(row => {
         if (!row.trim()) return;
-        // Regex splits CSV row correctly even if values are quoted and contain commas
         const cols = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g);
         if (!cols || cols.length < 4) return;
-
-        // Remove any surrounding quotes and trim whitespace
         const [name, subject, email, status] = cols.map(c => c.replace(/(^"|"$)/g, "").trim());
 
         const tr = document.createElement("tr");
